@@ -8,7 +8,7 @@
     "build": "webpack --mode production"
   },
   "dependencies": {
-    "firebase": "^9.22.0",
+    "firebase": "^10.12.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
