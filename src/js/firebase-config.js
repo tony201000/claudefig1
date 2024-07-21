@@ -10,14 +10,15 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 // Initialize Analytics
-const analytics = getAnalytics(app);
+export const analytics = getAnalytics(app);
 
 // Initialize Firestore and Auth
-const db = firebase.firestore();
-const auth = firebase.auth();
+export const auth = firebase.auth();
+export const db = firebase.firestore();
+export const storage = firebase.storage();
 
 // You can export these services if you need to use them in other files
 // export { db, auth, analytics };
