@@ -1,40 +1,27 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
-module.exports = {
-  entry: './src/js/app.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+{
+  "name": "figurines-collection-site",
+  "version": "1.0.0",
+  "description": "Site de partage de figurines de collection",
+  "main": "src/js/app.js",
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production"
   },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
-        }
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      }
-    ]
+  "dependencies": {
+    "firebase": "^9.22.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './public/index.html'
-    })
-  ],
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'public'),
-    },
-    compress: true,
-    port: 9000,
+  "devDependencies": {
+    "@babel/core": "^7.22.1",
+    "@babel/preset-env": "^7.22.4",
+    "@babel/preset-react": "^7.22.3",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.1",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.84.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
   }
-};
+}
