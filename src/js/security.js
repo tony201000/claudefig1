@@ -1,0 +1,1 @@
+//Centralise les fonctions de securite
