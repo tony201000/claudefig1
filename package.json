@@ -1,21 +1,40 @@
-{
-  "name": "site",
-  "version": "1.0.0",
-  "description": "Projet de création de site internet pour la gestion de figurines de collection",
-  "main": "src/js/app.js",
-  "scripts": {
-    "start": "node src/js/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+  entry: './src/js/app.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
   },
-  "keywords": [],
-  "author": "Tony201000",
-  "license": "ISC",
-  "dependencies": {
-    "firebase": "^10.9.0",
-    "node.js": "^0.0.1-security"
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
+        }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
   },
-  "devDependencies": {
-    "webpack": "^5.93.0",
-    "webpack-cli": "^5.1.4"
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html'
+    })
+  ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    compress: true,
+    port: 9000,
   }
-}
+};
