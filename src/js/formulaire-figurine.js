@@ -3,6 +3,23 @@ import { db, storage } from './firebase-config.js';
 import { collection, getDocs, query, where, addDoc } from "firebase/firestore";
 import { ref, uploadBytes } from "firebase/storage";
 
+//application de vue
+import Vue from 'vue';
+
+new Vue({
+  el: '#app',
+  data() {
+    return {
+      // Données du formulaire
+    };
+  },
+  methods: {
+    async submitForm() {
+      // Traitement du formulaire
+    }
+  }
+});
+
 // Fonction pour remplir les années
 function remplirAnnees() {
   const anneeSelect = document.getElementById('annee');
