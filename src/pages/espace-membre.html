@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Membre - FigurineShare</title>
+    <meta name="description" content="Gérez votre profil et vos annonces sur FigurineShare.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/espace-membre.css">
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <header>
+        <!-- Inclure le header commun ici -->
+    </header>
+
+    <main id="espace-membre">
+        <h1>Espace Membre</h1>
+
+        <section id="auth-section">
+            <div id="login-form">
+                <h2>Connexion</h2>
+                <form id="login">
+                    <input type="email" id="login-email" placeholder="Email" required>
+                    <input type="password" id="login-password" placeholder="Mot de passe" required>
+                    <button type="submit">Se connecter</button>
+                </form>
+            </div>
+
+            <div id="signup-form">
+                <h2>Inscription</h2>
+                <form id="signup">
+                    <input type="text" id="signup-username" placeholder="Nom d'utilisateur" required>
+                    <input type="email" id="signup-email" placeholder="Email" required>
+                    <input type="password" id="signup-password" placeholder="Mot de passe" required>
+                    <button type="submit">S'inscrire</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="user-profile" style="display: none;">
+            <h2>Mon Profil</h2>
+            <div id="profile-info">
+                <!-- Les informations du profil seront insérées ici dynamiquement -->
+            </div>
+            <button id="logout">Se déconnecter</button>
+        </section>
+
+        <section id="user-announcements" style="display: none;">
+            <h2>Mes Annonces</h2>
+            <div id="announcements-list">
+                <!-- Les annonces de l'utilisateur seront insérées ici dynamiquement -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Inclure le footer commun ici -->
+    </footer>
+
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/espace-membre.js"></script>
+    <script src="src/js/load-header.js"></script>
+</body>
+</html>

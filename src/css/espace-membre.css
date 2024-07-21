@@ -1,0 +1,51 @@
+#espace-membre {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#auth-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+#login-form, #signup-form {
+    width: 45%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, button {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#user-profile, #user-announcements {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#logout {
+    background-color: #e74c3c;
+}
+
+#logout:hover {
+    background-color: #c0392b;
+}
