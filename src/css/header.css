@@ -1,7 +1,9 @@
+/* Styles généraux pour le header */
 .site-header {
-    background-color: #3498db;
+    background-color: #3498db; /* Couleur principale */
     padding: 1rem 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
 }
 
 .site-header .container {
@@ -13,10 +15,12 @@
     padding: 0 1rem;
 }
 
+/* Logo */
 .logo img {
     display: block;
 }
 
+/* Navigation principale */
 .main-nav ul {
     display: flex;
     list-style-type: none;
@@ -31,14 +35,18 @@
 .main-nav a {
     color: white;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600; /* Légèrement plus gras pour une meilleure lisibilité */
     transition: color 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 4px;
 }
 
-.main-nav a:hover {
+.main-nav a:hover, .main-nav a:focus {
     color: #ecf0f1;
+    background-color: rgba(255, 255, 255, 0.2); /* Léger fond pour l'état hover */
 }
 
+/* Actions utilisateur */
 .user-actions {
     display: flex;
     align-items: center;
@@ -50,6 +58,7 @@
     padding: 0.5rem 1rem;
     border-radius: 4px;
     transition: background-color 0.3s ease;
+    font-weight: 600;
 }
 
 .btn-login {
@@ -58,18 +67,19 @@
     margin-right: 1rem;
 }
 
-.btn-login:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+.btn-login:hover, .btn-login:focus {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .btn-signup {
-    background-color: #2ecc71;
+    background-color: #2ecc71; /* Couleur de fond verte */
 }
 
-.btn-signup:hover {
-    background-color: #27ae60;
+.btn-signup:hover, .btn-signup:focus {
+    background-color: #27ae60; /* Couleur de fond verte plus foncée */
 }
 
+/* Responsivité */
 @media (max-width: 768px) {
     .site-header .container {
         flex-direction: column;
