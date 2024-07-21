@@ -6,10 +6,12 @@
     <title>Ajouter une figurine</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/component.css">
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
-    <div id="header"></div>
-
+        <!-- Le header sera injecté ici par load-header.js -->
     <main>
         <h1>Ajouter une nouvelle figurine</h1>
         <form id="formulaire-figurine">
@@ -68,7 +70,7 @@
         </form>
     </main>
 
-    <div id="footer"></div>
+    <!-- Le header sera injecté ici par load-footer.js -->
 
     <script src="../js/load-header.js"></script>
     <script src="../js/load-footer.js"></script>
