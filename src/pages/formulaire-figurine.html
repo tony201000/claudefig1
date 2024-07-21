@@ -1,80 +1,162 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajouter une figurine</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/component.css">
-    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire d'Ajout de Figurine</title>
 </head>
 <body>
-        <!-- Le header sera injecté ici par load-header.js -->
-    <main>
-        <h1>Ajouter une nouvelle figurine</h1> 
-        <form id="formulaire-figurine">
-            <div class="form-group">
-                <label for="nom">Nom du personnage :</label>
-                <input type="text" id="nom" name="nom" required>
-            </div>
-            <div class="form-group">
-                <label for="codeBarre">Code barre :</label>
-                <input type="text" id="codeBarre" name="codeBarre" required pattern="\d+">
-            </div>
-            <div class="form-group">
-                <label for="edition">Edition :</label>
-                <input type="text" id="edition" name="edition" required>
-            </div>
-            <div class="form-group">
-                <label for="serie">Série :</label>
-                <input type="text" id="serie" name="serie" required>
-            </div>
-            <div class="form-group">
-                <label for="numeroModele">Numéro ou Modèle :</label>
-                <input type="text" id="numeroModele" name="numeroModele" required>
-            </div>
-            <div class="form-group">
-                <label for="annee">Année :</label>
-                <select id="annee" name="annee">
-                    <option value="">Sélectionner une année</option>
-                    <!-- Les options seront générées dynamiquement en JavaScript -->
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="marque">Marque :</label>
-                <input type="text" id="marque" name="marque" required>
-            </div>
-            <div class="form-group">
-                <label for="materiau">Matériau principal :</label>
-                <select id="materiau" name="materiau" required>
-                    <option value="">Sélectionner un matériau</option>
-                    <option value="PVC">PVC</option>
-                    <option value="Vinyle">Vinyle</option>
-                    <option value="Sofubi">Sofubi</option>
-                    <option value="ABS">ABS</option>
-                    <option value="Résine PU">Résine PU</option>
-                    <option value="PVC/ABS">PVC/ABS</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="imagePrincipale">Image principale :</label>
-                <input type="file" id="imagePrincipale" name="imagePrincipale" accept="image/*" required>
-            </div>
-            <div class="form-group">
-                <label for="imagesSupplementaires">Images supplémentaires (facultatif) :</label>
-                <input type="file" id="imagesSupplementaires" name="imagesSupplementaires" accept="image/*" multiple>
-            </div>
-            <button type="submit">Ajouter la figurine</button>
-        </form>
-    </main>
+  <h1>Formulaire d'Ajout de Figurine</h1>
+  <form id="figurineForm">
+    <label for="marque">Marque:</label>
+    <select id="marque" name="marque" required></select>
 
-    <!-- Le header sera injecté ici par load-footer.js -->
+    <label for="serie">Série:</label>
+    <select id="serie" name="serie" required></select>
 
-    <script src="../js/load-header.js"></script>
-    <script src="../js/load-footer.js"></script>
-    <script src="../js/firebase-config.js"></script>
-    <script src="../js/figurines.js"></script>
+    <label for="modele">Modèle:</label>
+    <select id="modele" name="modele" required></select>
+
+    <label for="nomPersonnage">Nom du personnage:</label>
+    <input type="text" id="nomPersonnage" name="nomPersonnage" required>
+
+    <label for="codeBarre">Code barre:</label>
+    <input type="text" id="codeBarre" name="codeBarre" pattern="\d+" required>
+
+    <label for="edition">Édition:</label>
+    <input type="text" id="edition" name="edition" required>
+
+    <label for="annee">Année:</label>
+    <select id="annee" name="annee"></select>
+
+    <label for="materiau">Matériau principal:</label>
+    <select id="materiau" name="materiau" required>
+      <option value="PVC">PVC</option>
+      <option value="Vinyle">Vinyle</option>
+      <option value="Sofubi">Sofubi</option>
+      <option value="ABS">ABS</option>
+      <option value="Résine PU">Résine PU</option>
+      <option value="PVC/ABS">PVC/ABS</option>
+    </select>
+
+    <label for="imagePrincipale">Image principale:</label>
+    <input type="file" id="imagePrincipale" name="imagePrincipale" accept="image/*" required>
+
+    <label for="images">Images (facultatif):</label>
+    <input type="file" id="images" name="images" accept="image/*" multiple>
+
+    <button type="submit">Soumettre</button>
+  </form>
+
+  <!-- Include Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+  <script>
+    // Configuration Firebase
+    var firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_STORAGE_BUCKET",
+      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+    // Initialiser Firebase
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+
+    // Fonction pour remplir les années
+    function remplirAnnees() {
+      const anneeSelect = document.getElementById('annee');
+      const currentYear = new Date().getFullYear();
+      for (let year = currentYear; year >= 1900; year--) {
+        const option = document.createElement('option');
+        option.value = year;
+        option.textContent = year;
+        anneeSelect.appendChild(option);
+      }
+    }
+
+    // Appel de la fonction pour remplir les années
+    remplirAnnees();
+
+    // Fonction pour charger les marques
+    function chargerMarques() {
+      const marqueSelect = document.getElementById('marque');
+      db.collection("marques").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          const option = document.createElement('option');
+          option.value = doc.id;
+          option.textContent = doc.data().nom;
+          marqueSelect.appendChild(option);
+        });
+      });
+    }
+
+    // Appel de la fonction pour charger les marques
+    chargerMarques();
+
+    // Écouteur pour changer la série en fonction de la marque
+    document.getElementById('marque').addEventListener('change', (e) => {
+      const marqueId = e.target.value;
+      const serieSelect = document.getElementById('serie');
+      serieSelect.innerHTML = '';
+      db.collection("series").where("marqueId", "==", marqueId).get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          const option = document.createElement('option');
+          option.value = doc.id;
+          option.textContent = doc.data().nom;
+          serieSelect.appendChild(option);
+        });
+      });
+    });
+
+    // Écouteur pour changer le modèle en fonction de la série
+    document.getElementById('serie').addEventListener('change', (e) => {
+      const serieId = e.target.value;
+      const modeleSelect = document.getElementById('modele');
+      modeleSelect.innerHTML = '';
+      db.collection("modeles").where("serieId", "==", serieId).get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          const option = document.createElement('option');
+          option.value = doc.id;
+          option.textContent = doc.data().nom;
+          modeleSelect.appendChild(option);
+        });
+      });
+    });
+
+    // Écouteur pour soumettre le formulaire
+    document.getElementById('figurineForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const marque = document.getElementById('marque').value;
+      const serie = document.getElementById('serie').value;
+      const modele = document.getElementById('modele').value;
+      const nomPersonnage = document.getElementById('nomPersonnage').value;
+      const codeBarre = document.getElementById('codeBarre').value;
+      const edition = document.getElementById('edition').value;
+      const annee = document.getElementById('annee').value;
+      const materiau = document.getElementById('materiau').value;
+      const imagePrincipale = document.getElementById('imagePrincipale').files[0];
+      const images = document.getElementById('images').files;
+
+      // Logique pour soumettre les données à Firebase
+      db.collection("figurines").add({
+        marque,
+        serie,
+        modele,
+        nomPersonnage,
+        codeBarre,
+        edition,
+        annee,
+        materiau
+      }).then((docRef) => {
+        console.log("Document écrit avec ID: ", docRef.id);
+        // Ajoute la logique pour uploader les images dans Firebase Storage
+      }).catch((error) => {
+        console.error("Erreur lors de l'ajout du document: ", error);
+      });
+    });
+  </script>
 </body>
 </html>
