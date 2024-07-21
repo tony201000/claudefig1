@@ -6,52 +6,7 @@
 		<lastmod>2024-07-21</lastmod>
 	</url>
 	<url>
-		<loc>https://www.figurineshare.com/src/pages/recherche.html</loc>
-		<priority>0.57</priority>
-		<lastmod>2024-07-21</lastmod>
-	</url>
-	<url>
-		<loc>https://www.figurineshare.com/src/pages/privacy-policy.html</loc>
-		<priority>0.57</priority>
-		<lastmod>2024-07-21</lastmod>
-	</url>
-	<url>
-		<loc>https://www.figurineshare.com/src/pages/nouvelle-annonce.html</loc>
-		<priority>0.57</priority>
-		<lastmod>2024-07-21</lastmod>
-	</url>
-	<url>
-		<loc>https://www.figurineshare.com/src/pages/espace-membre.html</loc>
-		<priority>0.57</priority>
-		<lastmod>2024-07-21</lastmod>
-	</url>
-	<url>
-		<loc>https://www.figurineshare.com/src/pages/catalogue.html</loc>
-		<priority>0.57</priority>
-		<lastmod>2024-07-21</lastmod>
-	</url>
-	<url>
-		<loc>https://www.figurineshare.com/src/pages/accueil.html</loc>
-		<priority>0.57</priority>
-		<lastmod>2024-07-21</lastmod>
-	</url>
-	<url>
-		<loc>https://www.figurineshare.com/src/components/header.html</loc>
-		<priority>0.57</priority>
-		<lastmod>2024-07-21</lastmod>
-	</url>
-	<url>
-		<loc>https://www.figurineshare.com/src/components/formulaire-figurine.html</loc>
-		<priority>0.57</priority>
-		<lastmod>2024-07-21</lastmod>
-	</url>
-	<url>
-		<loc>https://www.figurineshare.com/src/components/footer.html</loc>
-		<priority>0.57</priority>
-		<lastmod>2024-07-21</lastmod>
-	</url>
-	<url>
-		<loc>https://www.figurineshare.com/src/components/carte-annonce.html</loc>
+		<loc>https://www.figurineshare.com/node_modules/tslib/tslib.es6.html</loc>
 		<priority>0.57</priority>
 		<lastmod>2024-07-21</lastmod>
 	</url>
@@ -61,7 +16,52 @@
 		<lastmod>2024-07-21</lastmod>
 	</url>
 	<url>
-		<loc>https://www.figurineshare.com/node_modules/tslib/tslib.es6.html</loc>
+		<loc>https://www.figurineshare.com/src/components/carte-annonce.html</loc>
+		<priority>0.57</priority>
+		<lastmod>2024-07-21</lastmod>
+	</url>
+	<url>
+		<loc>https://www.figurineshare.com/src/components/footer.html</loc>
+		<priority>0.57</priority>
+		<lastmod>2024-07-21</lastmod>
+	</url>
+	<url>
+		<loc>https://www.figurineshare.com/src/components/formulaire-figurine.html</loc>
+		<priority>0.57</priority>
+		<lastmod>2024-07-21</lastmod>
+	</url>
+	<url>
+		<loc>https://www.figurineshare.com/src/components/header.html</loc>
+		<priority>0.57</priority>
+		<lastmod>2024-07-21</lastmod>
+	</url>
+	<url>
+		<loc>https://www.figurineshare.com/src/pages/accueil.html</loc>
+		<priority>0.57</priority>
+		<lastmod>2024-07-21</lastmod>
+	</url>
+	<url>
+		<loc>https://www.figurineshare.com/src/pages/catalogue.html</loc>
+		<priority>0.57</priority>
+		<lastmod>2024-07-21</lastmod>
+	</url>
+	<url>
+		<loc>https://www.figurineshare.com/src/pages/espace-membre.html</loc>
+		<priority>0.57</priority>
+		<lastmod>2024-07-21</lastmod>
+	</url>
+	<url>
+		<loc>https://www.figurineshare.com/src/pages/nouvelle-annonce.html</loc>
+		<priority>0.57</priority>
+		<lastmod>2024-07-21</lastmod>
+	</url>
+	<url>
+		<loc>https://www.figurineshare.com/src/pages/privacy-policy.html</loc>
+		<priority>0.57</priority>
+		<lastmod>2024-07-21</lastmod>
+	</url>
+	<url>
+		<loc>https://www.figurineshare.com/src/pages/recherche.html</loc>
 		<priority>0.57</priority>
 		<lastmod>2024-07-21</lastmod>
 	</url>
