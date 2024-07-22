@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche de Figurine</title>
+    <link rel="stylesheet" href="form.css">
+    <!-- Firebase SDK -->
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="form.js"></script>
+</head>
+<body>
+    <form id="searchForm">
+        <label for="marque">Marque:</label>
+        <select id="marque" name="marque" onchange="updatePersonnages()">
+            <option value="">Sélectionnez une marque</option>
+        </select>
+
+        <label for="personnage" id="labelPersonnage" style="display:none;">Personnage:</label>
+        <select id="personnage" name="personnage" style="display:none;" onchange="updateSeries()">
+            <option value="">Sélectionnez un personnage</option>
+        </select>
+
+        <label for="serie" id="labelSerie" style="display:none;">Série:</label>
+        <select id="serie" name="serie" style="display:none;" onchange="updateEditions()">
+            <option value="">Sélectionnez une série</option>
+        </select>
+
+        <label for="edition" id="labelEdition" style="display:none;">Édition:</label>
+        <select id="edition" name="edition" style="display:none;" onchange="updateModeles()">
+            <option value="">Sélectionnez une édition</option>
+        </select>
+
+        <label for="modele" id="labelModele" style="display:none;">Modèle:</label>
+        <select id="modele" name="modele" style="display:none;" onchange="showFigurine()">
+            <option value="">Sélectionnez un modèle</option>
+        </select>
+    </form>
+
+    <div id="figurineInfo" style="display:none;">
+        <!-- Les informations de la figurine seront affichées ici -->
+    </div>
+</body>
+</html>

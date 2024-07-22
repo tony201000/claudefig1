@@ -1,0 +1,75 @@
+<!-- formulaire simple saisie donnees -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche de Figurine</title>
+    <link rel="stylesheet" href="form.css">
+    <!-- Firebase SDK -->
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="form.js"></script>
+</head>
+<body>
+    <h1>Recherche de Figurine</h1>
+    <form id="searchForm">
+        <label for="marque">Marque:</label>
+        <select id="marque" name="marque" onchange="updatePersonnages()">
+            <option value="">Sélectionnez une marque</option>
+        </select>
+
+        <label for="personnage" id="labelPersonnage" style="display:none;">Personnage:</label>
+        <select id="personnage" name="personnage" style="display:none;" onchange="updateSeries()">
+            <option value="">Sélectionnez un personnage</option>
+        </select>
+
+        <label for="serie" id="labelSerie" style="display:none;">Série:</label>
+        <select id="serie" name="serie" style="display:none;" onchange="updateEditions()">
+            <option value="">Sélectionnez une série</option>
+        </select>
+
+        <label for="edition" id="labelEdition" style="display:none;">Édition:</label>
+        <select id="edition" name="edition" style="display:none;" onchange="updateModeles()">
+            <option value="">Sélectionnez une édition</option>
+        </select>
+
+        <label for="modele" id="labelModele" style="display:none;">Modèle:</label>
+        <select id="modele" name="modele" style="display:none;" onchange="showFigurine()">
+            <option value="">Sélectionnez un modèle</option>
+        </select>
+    </form>
+
+    <div id="figurineInfo" style="display:none;">
+        <!-- Les informations de la figurine seront affichées ici -->
+    </div>
+
+    <h1>Ajouter une Figurine</h1>
+    <form id="addForm">
+        <label for="addMarque">Marque:</label>
+        <input type="text" id="addMarque" name="marque" required>
+
+        <label for="addPersonnage">Personnage:</label>
+        <input type="text" id="addPersonnage" name="personnage" required>
+
+        <label for="addSerie">Série:</label>
+        <input type="text" id="addSerie" name="serie" required>
+
+        <label for="addEdition">Édition:</label>
+        <input type="text" id="addEdition" name="edition" required>
+
+        <label for="addModele">Modèle:</label>
+        <input type="text" id="addModele" name="modele" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="price">Prix:</label>
+        <input type="number" id="price" name="price" required>
+
+        <label for="imageUrl">URL de l'image:</label>
+        <input type="url" id="imageUrl" name="imageUrl" required>
+
+        <button type="submit">Ajouter la Figurine</button>
+    </form>
+</body>
+</html>
