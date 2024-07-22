@@ -187,7 +187,7 @@ async function addFigurine(event) {
         await setDoc(modeleRef, {
             name: modele,
             description: description,
-            price: parseFloat(price),
+            price: parseFloat(price), 
             imageUrl: imageUrl
         });
 
